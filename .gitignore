@@ -1,0 +1,53 @@
+# IntelliJ IDEA/Android Studio
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# macOS
+.DS_Store
+
+# Gradle ビルドディレクトリ
+/build/
+/app/build/
+
+# キャッシュファイル
+/captures
+.externalNativeBuild
+.cxx
+
+# ユーザ固有ファイル
+*.hprof
+*.log
+
+# Kotlin/Java コンパイル成果物
+/**/*.class
+/**/*.jar
+/**/*.war
+/**/*.ear
+
+# テストレポートやビルドレポート
+/reports/
+/test-results/
+/outputs/
+/jacoco/
+
+# Android Studio ビルドキャッシュ
+.idea/caches
+.idea/libraries
+.idea/misc.xml
+.idea/vcs.xml
+.idea/inspectionProfiles
+.idea/modules.xml
+
+# APK および署名ファイル
+*.apk
+*.keystore
+
+# Git LFS
+*.lock
