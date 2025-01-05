@@ -1,10 +1,10 @@
 package com.example.unitcounter
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
 import com.example.unitcounter.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var count = 0

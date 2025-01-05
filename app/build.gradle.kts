@@ -50,7 +50,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.10.0")
 
     testImplementation(libs.junit)
