@@ -1,4 +1,9 @@
 <resources>
-    <style name="Theme.UnitCounter" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- マテリアルデザインテーマ -->
+    <style name="Theme.UnitCounter" parent="Theme.Material3.DayNight">
+        <!-- 必要に応じてカスタマイズ -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorTertiary">@color/purple_700</item>
     </style>
 </resources>
