@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "UnitCounter"
+rootProject.name = "CoinCounter"
 include(":app")
