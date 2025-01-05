@@ -18,11 +18,23 @@ class MainActivity : AppCompatActivity() {
         // 初期カウントの表示
         updateCountDisplay()
 
-        // カウントアップボタンの処理
-        binding.buttonIncrement.setOnClickListener {
-            count++
-            updateCountDisplay()
-        }
+        // 各ボタンのクリックリスナーを設定
+        binding.buttonIncrement.setOnClickListener { incrementCount(1) }
+        binding.buttonIncrement5.setOnClickListener { incrementCount(5) }
+        binding.buttonIncrement10.setOnClickListener { incrementCount(10) }
+        binding.buttonIncrement50.setOnClickListener { incrementCount(50) }
+        binding.buttonIncrement100.setOnClickListener { incrementCount(100) }
+        binding.buttonReset.setOnClickListener { resetCount() }
+    }
+
+    private fun incrementCount(value: Int) {
+        count += value
+        updateCountDisplay()
+    }
+
+    private fun resetCount() {
+        count = 0
+        updateCountDisplay()
     }
 
     private fun updateCountDisplay() {
