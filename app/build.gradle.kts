@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.unitcounter"
+    namespace = "com.tomatosuper.unitcounter"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.unitcounter"
+        applicationId = "com.tomatosuper.unitcounter"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

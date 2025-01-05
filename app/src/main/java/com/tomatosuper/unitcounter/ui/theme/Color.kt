@@ -1,4 +1,4 @@
-package com.example.unitcounter.ui.theme
+package com.tomatosuper.unitcounter.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

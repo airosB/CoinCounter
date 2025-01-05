@@ -1,8 +1,8 @@
-package com.example.unitcounter
+package com.tomatosuper.unitcounter
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import com.example.unitcounter.databinding.ActivityMainBinding
+import com.tomatosuper.unitcounter.databinding.ActivityMainBinding
 
 class MainActivity : ComponentActivity() {
 
