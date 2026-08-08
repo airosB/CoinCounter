@@ -36,20 +36,44 @@ class MainActivity : ComponentActivity() {
             windowInsets
         }
 
+        // 画面回転やマルチウィンドウのリサイズで Activity が再生成されてもカウントを引き継ぐ
+        savedInstanceState?.let(::restoreCounts)
+
         // 初期カウントの表示
         updateCountDisplay()
 
         // 各ボタンのクリックリスナーを設定
-        binding.buttonIncrement.setOnClickListener { incrementCount(1, ::count1) }
-        binding.buttonIncrement5.setOnClickListener { incrementCount(5, ::count5) }
-        binding.buttonIncrement10.setOnClickListener { incrementCount(10, ::count10) }
-        binding.buttonIncrement50.setOnClickListener { incrementCount(50, ::count50) }
-        binding.buttonIncrement100.setOnClickListener { incrementCount(100, ::count100) }
-        binding.buttonIncrement500.setOnClickListener { incrementCount(500, ::count500) }
+        binding.buttonIncrement.setOnClickListener { incrementCount(1) }
+        binding.buttonIncrement5.setOnClickListener { incrementCount(5) }
+        binding.buttonIncrement10.setOnClickListener { incrementCount(10) }
+        binding.buttonIncrement50.setOnClickListener { incrementCount(50) }
+        binding.buttonIncrement100.setOnClickListener { incrementCount(100) }
+        binding.buttonIncrement500.setOnClickListener { incrementCount(500) }
         binding.buttonReset.setOnClickListener { resetCount() }
     }
 
-    private fun incrementCount(value: Int, coinCounter: () -> Int) {
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(KEY_TOTAL, count)
+        outState.putInt(KEY_COUNT_1, count1)
+        outState.putInt(KEY_COUNT_5, count5)
+        outState.putInt(KEY_COUNT_10, count10)
+        outState.putInt(KEY_COUNT_50, count50)
+        outState.putInt(KEY_COUNT_100, count100)
+        outState.putInt(KEY_COUNT_500, count500)
+    }
+
+    private fun restoreCounts(state: Bundle) {
+        count = state.getInt(KEY_TOTAL)
+        count1 = state.getInt(KEY_COUNT_1)
+        count5 = state.getInt(KEY_COUNT_5)
+        count10 = state.getInt(KEY_COUNT_10)
+        count50 = state.getInt(KEY_COUNT_50)
+        count100 = state.getInt(KEY_COUNT_100)
+        count500 = state.getInt(KEY_COUNT_500)
+    }
+
+    private fun incrementCount(value: Int) {
         count += value
         when (value) {
             1 -> count1++
@@ -81,5 +105,15 @@ class MainActivity : ComponentActivity() {
         binding.textViewCount50.text = "50円: ${count50}枚"
         binding.textViewCount100.text = "100円: ${count100}枚"
         binding.textViewCount500.text = "500円: ${count500}枚"
+    }
+
+    private companion object {
+        const val KEY_TOTAL = "total"
+        const val KEY_COUNT_1 = "count1"
+        const val KEY_COUNT_5 = "count5"
+        const val KEY_COUNT_10 = "count10"
+        const val KEY_COUNT_50 = "count50"
+        const val KEY_COUNT_100 = "count100"
+        const val KEY_COUNT_500 = "count500"
     }
 }

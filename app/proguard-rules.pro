@@ -23,9 +23,7 @@
 # Keep data binding classes
 -keep class androidx.databinding.** { *; }
 
-# Keep Compose classes
--keep class androidx.compose.** { *; }
--keepclassmembers class androidx.compose.** { *; }
-
-# Keep Material3 classes
--keep class androidx.compose.material3.** { *; }
+# AGP 9.1 以降、R8 は DEX 出力時に既定でクラスを無名パッケージへ再配置する。
+# DataBinding は生成された DataBinderMapperImpl をリフレクションで解決するため、
+# release ビルドで画面が表示されなくなる場合は次の行を有効化する。
+#-dontrepackage
