@@ -10,7 +10,7 @@ android {
         applicationId = "io.tomatosuper.coincounter"
         minSdk = 24
         targetSdk = 37
-        versionCode = 6
+        versionCode = 8
         versionName = "1.0.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
